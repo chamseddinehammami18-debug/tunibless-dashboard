@@ -1,0 +1,228 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body,div,span,p,button,input,label{font-family:'Segoe UI',Tahoma,Arial,sans-serif}
+.wrap{background:#0f0f0f;min-height:100vh;direction:rtl}
+.top-bar{background:#181818;border-bottom:1px solid #2a2a2a;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-img{width:44px;height:44px;border-radius:10px;overflow:hidden;background:#1a1a1a;display:flex;align-items:center;justify-content:center}
+.logo-svg{width:40px;height:40px}
+.org-name{font-size:17px;font-weight:700;color:#fff;letter-spacing:0.01em}
+.org-sub{font-size:11px;color:#888;margin-top:1px}
+.login-wrap{display:flex;align-items:center;justify-content:center;min-height:520px;background:#0f0f0f}
+.login-box{background:#181818;border:1px solid #2a2a2a;border-radius:14px;padding:36px;width:100%;max-width:360px;text-align:right}
+.login-logo{display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.lt{font-size:20px;font-weight:700;color:#fff;margin-bottom:6px}
+.ls{font-size:13px;color:#888;margin-bottom:22px}
+.fl{font-size:12px;color:#aaa;margin-bottom:6px;display:block}
+.fi{width:100%;padding:10px 14px;border:1px solid #333;border-radius:8px;background:#111;color:#fff;font-size:14px;outline:none;text-align:right;direction:rtl}
+.fi:focus{border-color:#c8102e}
+.bp{width:100%;padding:11px;background:#c8102e;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-top:14px}
+.bp:hover{background:#a50d25}
+.errmsg{color:#e34948;font-size:12px;margin-top:8px;display:none;direction:rtl}
+.hint{font-size:11px;color:#555;margin-top:14px;text-align:center}
+.dash{background:#0f0f0f}
+.dh{background:#181818;border-bottom:1px solid #2a2a2a;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.mav{width:42px;height:42px;border-radius:50%;background:#c8102e;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0}
+.mi{margin-right:12px}
+.mn{font-size:15px;font-weight:600;color:#fff}
+.mid{font-size:12px;color:#666;margin-top:2px}
+.badge-act{background:#1a3a1a;color:#4ade80;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:600;border:1px solid #2a5a2a}
+.blog{padding:20px 24px 24px}
+.sec{font-size:11px;font-weight:600;color:#555;letter-spacing:0.08em;margin-bottom:12px;text-transform:uppercase}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:24px}
+.sc{background:#181818;border:1px solid #222;border-radius:10px;padding:14px 16px;text-align:right}
+.sl{font-size:11px;color:#666;margin-bottom:5px}
+.sv{font-size:26px;font-weight:700;color:#fff;line-height:1}
+.ss{font-size:11px;color:#555;margin-top:4px}
+.cr{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.cc{background:#181818;border:1px solid #222;border-radius:12px;padding:16px;text-align:right}
+.ct{font-size:13px;font-weight:600;color:#ddd;margin-bottom:3px}
+.csub{font-size:11px;color:#555;margin-bottom:12px}
+.el{background:#181818;border:1px solid #222;border-radius:12px;padding:16px;margin-bottom:20px}
+.er{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #222;direction:rtl}
+.er:last-child{border-bottom:none;padding-bottom:0}
+.er:first-child{padding-top:0}
+.ed{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0}
+.ed.miss{background:#333}
+.en{font-size:13px;color:#ccc;flex:1}
+.edate{font-size:11px;color:#555;white-space:nowrap}
+.ebp{font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600;white-space:nowrap}
+.ebp.pres{background:#1a3a1a;color:#4ade80;border:1px solid #2a5a2a}
+.ebp.abs{background:#222;color:#666;border:1px solid #333}
+.blog-out{padding:10px 24px;cursor:pointer;background:none;border:1px solid #333;border-radius:8px;font-size:12px;color:#888;display:flex;align-items:center;gap:6px}
+.blog-out:hover{background:#1a1a1a;color:#ccc}
+</style>
+
+<h2 class="sr-only">لوحة تحكم أعضاء TuniBless — متابعة الحضور والمشاركة</h2>
+
+<div class="wrap">
+
+<div class="top-bar">
+  <div class="logo-area">
+    <div class="logo-img">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#111" stroke="#333" stroke-width="1"/>
+        <path d="M50 8 A42 42 0 0 1 92 50" stroke="#f5c518" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M92 50 A42 42 0 0 1 50 92" stroke="#4ade80" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M50 92 A42 42 0 0 1 8 50" stroke="#c8102e" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M8 50 A42 42 0 0 1 50 8" stroke="#222" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M38 50 A12 12 0 1 0 38 50.01 M44 44 A18 18 0 0 1 44 56" stroke="#c8102e" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <polygon points="50,36 52,43 59,43 53,48 55,55 50,50 45,55 47,48 41,43 48,43" fill="#c8102e" opacity="0.9" transform="scale(0.6) translate(33,33)"/>
+        <text x="50" y="96" font-size="11" font-weight="900" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" letter-spacing="2">TUNIBLESS</text>
+      </svg>
+    </div>
+    <div>
+      <div class="org-name">TuniBless</div>
+      <div class="org-sub">منظمة تطوعية</div>
+    </div>
+  </div>
+</div>
+
+<div id="login-screen" class="login-wrap">
+  <div class="login-box">
+    <div class="login-logo">
+      <svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#111" stroke="#333" stroke-width="1"/>
+        <path d="M50 8 A42 42 0 0 1 92 50" stroke="#f5c518" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M92 50 A42 42 0 0 1 50 92" stroke="#4ade80" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M50 92 A42 42 0 0 1 8 50" stroke="#c8102e" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M8 50 A42 42 0 0 1 50 8" stroke="#222" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <polygon points="50,33 53,43 63,43 55,49 58,59 50,53 42,59 45,49 37,43 47,43" fill="#c8102e"/>
+      </svg>
+    </div>
+    <div class="lt" style="text-align:center">مرحباً بك في TuniBless</div>
+    <div class="ls" style="text-align:center">أدخل رقم عضويتك للدخول</div>
+    <label class="fl">رقم العضوية</label>
+    <input class="fi" id="mid" type="text" placeholder="TB-0001" maxlength="10"/>
+    <div class="errmsg" id="err"><i class="ti ti-alert-circle" aria-hidden="true"></i> رقم العضوية غير صحيح</div>
+    <button class="bp" onclick="doLogin()">الدخول إلى لوحة التحكم</button>
+    <div class="hint">جرّب: TB-0001</div>
+  </div>
+</div>
+
+<div id="dash" style="display:none" class="dash">
+  <div class="dh">
+    <div style="display:flex;align-items:center">
+      <div class="mav">ش</div>
+      <div class="mi">
+        <div class="mn">شمس الدين حمامي</div>
+        <div class="mid">TB-0001 · عضو منذ 8 أشهر</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span class="badge-act">عضو نشط</span>
+      <button class="blog-out" onclick="doLogout()"><i class="ti ti-logout" aria-hidden="true"></i> خروج</button>
+    </div>
+  </div>
+
+  <div class="blog">
+    <div class="sec">إحصائيات هذا الشهر</div>
+    <div class="sg">
+      <div class="sc">
+        <div class="sl">الفعاليات المُحضَرة</div>
+        <div class="sv" style="color:#c8102e">4</div>
+        <div class="ss">من أصل 5 هذا الشهر</div>
+      </div>
+      <div class="sc">
+        <div class="sl">ساعات التطوع</div>
+        <div class="sv" style="color:#f5c518">18</div>
+        <div class="ss">ساعة هذا الشهر</div>
+      </div>
+      <div class="sc">
+        <div class="sl">نسبة الحضور</div>
+        <div class="sv" style="color:#4ade80">80%</div>
+        <div class="ss">أداء رائع!</div>
+      </div>
+      <div class="sc">
+        <div class="sl">إجمالي الفعاليات</div>
+        <div class="sv" style="color:#fff">34</div>
+        <div class="ss">منذ الانضمام</div>
+      </div>
+    </div>
+
+    <div class="sec">نظرة عامة على النشاط</div>
+    <div class="cr">
+      <div class="cc">
+        <div class="ct">الفعاليات خلال 6 أشهر</div>
+        <div class="csub">عدد الفعاليات شهرياً</div>
+        <div style="position:relative;height:160px"><canvas id="barChart" role="img" aria-label="مخطط عمودي للفعاليات الشهرية">مخطط الحضور الشهري</canvas></div>
+      </div>
+      <div class="cc">
+        <div class="ct">توزيع نوع النشاط</div>
+        <div class="csub">الساعات حسب نوع الفعالية</div>
+        <div style="position:relative;height:160px"><canvas id="pieChart" role="img" aria-label="مخطط دائري لأنواع الفعاليات">توزيع الفعاليات</canvas></div>
+        <div id="pileg" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:10px;color:#888;justify-content:flex-end"></div>
+      </div>
+    </div>
+
+    <div class="sec">الفعاليات الأخيرة</div>
+    <div class="el">
+      <div class="er"><div class="ed"></div><div class="en">تنظيف المدينة العتيقة</div><div class="edate">12 يونيو</div><span class="ebp pres">حضر</span></div>
+      <div class="er"><div class="ed"></div><div class="en">توزيع وجبات رمضان</div><div class="edate">7 يونيو</div><span class="ebp pres">حضر</span></div>
+      <div class="er"><div class="ed"></div><div class="en">دعم تعليمي للأطفال</div><div class="edate">2 يونيو</div><span class="ebp pres">حضر</span></div>
+      <div class="er"><div class="ed miss"></div><div class="en">يوم الرياضة الشبابية</div><div class="edate">28 مايو</div><span class="ebp abs">غائب</span></div>
+      <div class="er"><div class="ed"></div><div class="en">معرض التراث الثقافي</div><div class="edate">22 مايو</div><span class="ebp pres">حضر</span></div>
+      <div class="er"><div class="ed miss"></div><div class="en">حملة تشجير الشاطئ</div><div class="edate">15 مايو</div><span class="ebp abs">غائب</span></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+function doLogin(){
+  const v=document.getElementById('mid').value.trim().toUpperCase();
+  const e=document.getElementById('err');
+  if(v!=='TB-0001'){e.style.display='block';return;}
+  e.style.display='none';
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('dash').style.display='block';
+  renderCharts();
+}
+document.getElementById('mid').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+function doLogout(){
+  document.getElementById('dash').style.display='none';
+  document.getElementById('login-screen').style.display='flex';
+  document.getElementById('mid').value='';
+}
+let bc=null,pc=null;
+function renderCharts(){
+  if(bc)bc.destroy();
+  if(pc)pc.destroy();
+  bc=new Chart(document.getElementById('barChart'),{
+    type:'bar',
+    data:{
+      labels:['يناير','فبراير','مارس','أبريل','مايو','يونيو'],
+      datasets:[{
+        label:'الفعاليات',
+        data:[3,5,2,4,3,4],
+        backgroundColor:['#c8102e','#f5c518','#c8102e','#4ade80','#f5c518','#c8102e'],
+        borderRadius:4,barThickness:20
+      }]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y+' فعاليات'}}},
+      scales:{
+        y:{beginAtZero:true,ticks:{color:'#555',font:{size:10},stepSize:1},grid:{color:'#222'},border:{display:false}},
+        x:{ticks:{color:'#666',font:{size:10},maxRotation:0},grid:{display:false},border:{display:false}}
+      }
+    }
+  });
+  const acts=['تنظيف','غذاء','تعليم','رياضة','ثقافة','بيئة','صحة'];
+  const acols=['#c8102e','#f5c518','#4ade80','#c8102e','#f5c518','#4ade80','#c8102e'];
+  const pdata=[12,9,7,5,8,6,4];
+  const tot=pdata.reduce((a,b)=>a+b,0);
+  pc=new Chart(document.getElementById('pieChart'),{
+    type:'doughnut',
+    data:{labels:acts,datasets:[{data:pdata,backgroundColor:acols,borderWidth:2,borderColor:'#181818',hoverOffset:4}]},
+    options:{
+      responsive:true,maintainAspectRatio:false,cutout:'60%',
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+Math.round(c.parsed/tot*100)+'%'}}}
+    }
+  });
+  document.getElementById('pileg').innerHTML=acts.map((t,i)=>`<span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:2px;background:${acols[i]};display:inline-block"></span>${t}</span>`).join('');
+}
+</script>
